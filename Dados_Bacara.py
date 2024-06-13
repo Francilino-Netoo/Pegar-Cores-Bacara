@@ -59,26 +59,24 @@ def run(playwright):
         
         while True:
             try:
-                iframe.wait_for_selector('.g_i', timeout=50000)
+                iframe.wait_for_selector('.v_x', timeout=50000)
                 html_content = iframe.content()
                 soup = BeautifulSoup(html_content, 'html.parser')
-                
                 listas_baccarat = [lista_baccarat1, lista_baccarat2, lista_baccarat3, lista_baccarat5, lista_baccarat6, lista_baccarat7, lista_baccarat8, lista_baccarat9]
 
                 for lista in listas_baccarat:
-                    if len(lista) > 4:
+                    if len(lista) > 1:
                         lista.clear()
 
                 #<circle cx="8" cy="8" r="7.2" stroke="#3E8AEE" stroke-width="1.6" fill="" style="max-height: 100%; max-width: 100%;"></circle> <circle cx="3.2" cy="3.2" r="2.8" fill="#F33D3D" stroke="var(--baccaratBgColor)" stroke-width="0.8"></circle>
                 
                 # BACCARAT 1
                 win_containers = soup.find_all('div', id='h22z8qhp17sa0vkh-401')
-             
                 for idx, win_container in enumerate(win_containers): #hG_hH pe_pg
-                    tables = win_container.find_all('table', class_='nb_nc') # as vezes as class 'nb_nc' e 'nb_nf' podem mudar de acordo com a linguagem do site
+                    tables = win_container.find_all('table') # as vezes as class 'ne_nf' e 'nb_nf' podem mudar de acordo com a linguagem do site
                     
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr')
                         resultados = [str(row) for row in rows]
                         novos_resultados = [resultado for resultado in resultados if resultado not in resultados_antigos[idx]]
                         if novos_resultados:
@@ -121,9 +119,9 @@ def run(playwright):
                 # BACCARAT 2
                 win_containers2 = soup.find_all('div', id='9j3eagurfwmml7z2-404')
                 for idx, win_container in enumerate(win_containers2):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados1 = [resultado for resultado in resultados if resultado not in resultados_antigos1[idx]]
                         if novos_resultados1:
@@ -159,9 +157,9 @@ def run(playwright):
                 # BACCARAT 3
                 win_containers3 = soup.find_all('div', id='cbcf6qas8fscb222-422')
                 for idx, win_container in enumerate(win_containers3):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados3 = [resultado for resultado in resultados if resultado not in resultados_antigos3[idx]]
                         if novos_resultados3:
@@ -196,9 +194,9 @@ def run(playwright):
                 # BACCARAT 5
                 win_containers5 = soup.find_all('div', id='ne074fgn4bd1150i-411')
                 for idx, win_container in enumerate(win_containers5):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados5 = [resultado for resultado in resultados if resultado not in resultados_antigos5[idx]]
                         if novos_resultados5:
@@ -233,9 +231,9 @@ def run(playwright):
                 # BACCARAT 6
                 win_containers6 = soup.find_all('div', id='oq808ojps709qqaf-413')
                 for idx, win_container in enumerate(win_containers6):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados6 = [resultado for resultado in resultados if resultado not in resultados_antigos6[idx]]
                         if novos_resultados6:
@@ -270,9 +268,9 @@ def run(playwright):
                 # BACCARAT 7
                 win_containers7 = soup.find_all('div', id='bcpirpmfpeobc191-425')
                 for idx, win_container in enumerate(win_containers7):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados7 = [resultado for resultado in resultados if resultado not in resultados_antigos7[idx]]
                         if novos_resultados7:
@@ -307,9 +305,9 @@ def run(playwright):
                 # BACCARAT 8
                 win_containers8 = soup.find_all('div', id='bcpirpmfpeobc192-426')
                 for idx, win_container in enumerate(win_containers8):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados8 = [resultado for resultado in resultados if resultado not in resultados_antigos8[idx]]
                         if novos_resultados8:
@@ -344,9 +342,9 @@ def run(playwright):
                 # BACCARAT 9
                 win_containers9 = soup.find_all('div', id='bcpirpmfpobc1912-436')
                 for idx, win_container in enumerate(win_containers9):
-                    tables = win_container.find_all('table', class_='nb_nc')
+                    tables = win_container.find_all('table', class_='ne_nf')
                     for table in tables:
-                        rows = table.find_all('tr', class_='nb_nf ')
+                        rows = table.find_all('tr', class_='ne_nh')
                         resultados = [str(row) for row in rows]
                         novos_resultados9 = [resultado for resultado in resultados if resultado not in resultados_antigos9[idx]]
                         if novos_resultados9:
