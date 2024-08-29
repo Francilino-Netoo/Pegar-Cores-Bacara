@@ -32,7 +32,7 @@ def run(playwright):
         page.fill('input[name="password"]', credenciais['password'])
         page.press('input[name="password"]', 'Enter')
         time.sleep(2)
-        page.goto("https://blaze1.space/pt/games/lobby")
+        page.goto("https://blaze.com/pt/games/lobby")
         page.goto("https://a8r.evo-games.com/frontend/evo/r2/#category=game_shows")
         page.goto("https://a8r.evo-games.com/frontend/evo/r2/#category=game_shows&game=topcard&table_id=TopCard000000001&vt_id=qfgzfeiyhvch5f34&lobby_launch_id=0fa26bc09e214b47a5278e09c06fe592")
         iframe_element = page.query_selector('iframe')
