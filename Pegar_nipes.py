@@ -43,7 +43,7 @@ def run(playwright):
         
         
 
-        found_initial_x = False  # Flag para indicar se encontramos um resultado com o x inicial
+        found_initial_x = False  
 
         
         
